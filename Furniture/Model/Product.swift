@@ -21,10 +21,3 @@ struct Product: Identifiable {
     return formatter.string(from: NSNumber(value: price)) ?? "$0.00"
   }
 }
-
-extension Product {
-  func getViewModel() -> ProductViewModel {
-    return ProductViewModel(name: name, imageName: imageName, price: formattedPrice)
-  }
-}
-

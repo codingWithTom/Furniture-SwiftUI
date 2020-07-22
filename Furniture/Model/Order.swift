@@ -9,9 +9,9 @@
 import Foundation
 
 struct Order {
-  var products: [Product]
+  var products: [OrderProduct]
   var total: Double {
-    return products.reduce(0.0) { $0 + $1.price }
+    return products.reduce(0.0) { $0 + $1.total }
   }
   var formattedTotal: String {
     let formatter = NumberFormatter()

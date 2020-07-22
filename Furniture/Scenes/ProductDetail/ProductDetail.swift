@@ -12,26 +12,25 @@ struct ProductDetail: View {
   var product: Product
   @State private var isZoomed: Bool = false
   var body: some View {
-    NavigationView {
-      VStack {
-        Spacer()
-        Image(product.imageName)
-          .resizable()
-          .aspectRatio(contentMode: isZoomed ? .fill : .fit)
-          .onTapGesture {
-            withAnimation {
-              self.isZoomed.toggle()
-            }
-        }
-        Spacer()
-        if !isZoomed {
-          ScrollView {
-            Text(product.description)
-          }.transition(.move(edge: .bottom))
-        }
+    VStack {
+      Spacer()
+      Image(product.imageName)
+        .resizable()
+        .aspectRatio(contentMode: isZoomed ? .fill : .fit)
+        .onTapGesture {
+          withAnimation {
+            self.isZoomed.toggle()
+          }
       }
-      .navigationBarTitle(product.name)
-    }.navigationViewStyle(StackNavigationViewStyle())
+      Spacer()
+      if !isZoomed {
+        ScrollView {
+          Text(product.description)
+        }.transition(.move(edge: .bottom))
+      }
+    }
+    .navigationBarTitle(product.name)
+    .navigationViewStyle(StackNavigationViewStyle())
   }
 }
 

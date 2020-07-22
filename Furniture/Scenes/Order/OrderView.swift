@@ -10,13 +10,15 @@ import SwiftUI
 
 struct OrderView: View {
   @ObservedObject var viewModel: OrderViewModel
+  @Environment(\.presentationMode) var presentation
+  @State private var isPresentingAddProduct: Bool = false
   
   var body: some View {
     NavigationView {
       List {
-        ForEach(viewModel.order.products, id: \.id) { product in
-          NavigationLink(destination: ProductDetail(product: product)) {
-            ProductView(viewModel: product.getViewModel())
+        ForEach(viewModel.order.products, id: \.id) { orderProduct in
+          NavigationLink(destination: ProductDetail(product: orderProduct.product)) {
+            ProductView(viewModel: orderProduct.getViewModel())
           }.padding(.horizontal)
         }
         .onMove(perform: viewModel.moveProduct)
@@ -25,25 +27,20 @@ struct OrderView: View {
       .navigationBarTitle(viewModel.order.formattedTotal)
       .navigationBarItems(leading: EditButton(),
         trailing:
-        Button(action: viewModel.addProduct) {
+        Button(action: { self.isPresentingAddProduct.toggle() }) {
           Image(systemName: "plus")
         }
       )
     }
+    .sheet(isPresented: self.$isPresentingAddProduct,
+           content: { AddProductView(isPresenting: self.$isPresentingAddProduct,
+                                     viewModel: AddProductViewModel())}
+    )
   }
 }
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    OrderView(viewModel: OrderViewModel(order: testOrder))
+    OrderView(viewModel: OrderViewModel(dependencies: testOrderViewModelDependencies))
   }
 }
-
-private var testOrder = Order(products: [
-  Product(name: "Bench", price: 20.5, imageName: "bench", description: ""),
-  Product(name: "Coffee Table", price: 40.0, imageName: "coffeeTable", description: ""),
-  Product(name: "Dinning Table", price: 55.0, imageName: "dinningTable", description: ""),
-  Product(name: "Director Chair", price: 75.0, imageName: "directorChair", description: ""),
-  Product(name: "Orange Chair", price: 33.95, imageName: "orangeChair", description: ""),
-  ])
-
