@@ -12,6 +12,11 @@ struct TabBarView: View {
   
   var body: some View {
     TabView {
+      FeedView(viewModel: FeedViewModel())
+        .tabItem {
+          Image(systemName: "rectangle.3.offgrid.fill")
+          Text("Feed")
+        }
       OrderView(viewModel: OrderViewModel())
         .tabItem {
           Image(systemName: "cart.fill")
