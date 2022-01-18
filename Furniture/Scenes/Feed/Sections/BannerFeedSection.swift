@@ -14,10 +14,16 @@ struct BannerFeedSection: View {
   
   var body: some View {
     ScrollView(.horizontal, showsIndicators: false) {
-      HStack {
-        ForEach(section.items, id: \.id) { bannerItem in
-          BannerCell(banner: bannerItem)
-            .frame(width: cellWidth)
+      VStack(alignment: .leading) {
+        Text(section.name ?? "")
+          .font(.title)
+          .padding(.leading)
+          .accessibilityAddTraits(.isHeader)
+        HStack {
+          ForEach(section.items, id: \.id) { bannerItem in
+            BannerCell(banner: bannerItem)
+              .frame(width: cellWidth)
+          }
         }
       }
     }

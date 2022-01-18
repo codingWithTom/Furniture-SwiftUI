@@ -18,6 +18,7 @@ struct OptionFeedSection: View {
       Text(section.name ?? "")
         .font(.title)
         .padding()
+        .accessibilityAddTraits(.isHeader)
       LazyVGrid(columns: Array(repeating: GridItem(.fixed(cellWidth)), count: columns), alignment: .leading){
         ForEach(section.items, id: \.id) { option in
           VStack(alignment: .leading) {

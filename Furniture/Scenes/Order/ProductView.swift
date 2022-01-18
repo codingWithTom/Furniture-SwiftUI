@@ -22,6 +22,7 @@ struct ProductView: View {
       if viewModel.quantity > 1 {
         Text("\(viewModel.quantity)")
           .font(.title)
+          .accessibilityHidden(true)
       }
       Image(viewModel.imageName)
         .resizable()
@@ -30,11 +31,14 @@ struct ProductView: View {
       VStack {
         HStack {
           Text(viewModel.name)
+            .accessibilityLabel("\(viewModel.quantity) \(viewModel.name)")
+            .accessibilitySortPriority(2)
           Spacer()
         }
         HStack {
           Spacer()
           Text(viewModel.price)
+            .accessibilitySortPriority(3)
         }
       }
     }

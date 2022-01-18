@@ -18,6 +18,7 @@ struct StoreFeedSection: View {
         Text(section.name ?? "")
           .font(.title)
           .padding(.leading)
+          .accessibilityAddTraits(.isHeader)
         LazyHGrid(rows: Array(repeating: GridItem(.fixed(100)), count: 3)) {
           ForEach(section.items, id: \.id) { store in
             StoreCell(store: store)

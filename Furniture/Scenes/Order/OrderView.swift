@@ -24,12 +24,16 @@ struct OrderView: View {
         .onMove(perform: viewModel.moveProduct)
         .onDelete(perform: viewModel.deleteProduct)
       }
-      .navigationBarTitle(viewModel.order.formattedTotal)
+      .navigationBarTitle(
+        Text(viewModel.order.formattedTotal)
+          .accessibilityLabel("Total for order: \(viewModel.order.formattedTotal)")
+      )
       .navigationBarItems(leading: EditButton(),
         trailing:
         Button(action: { self.isPresentingAddProduct.toggle() }) {
           Image(systemName: "plus")
         }
+                            .accessibilityHint("Tap to add a product to the order")
       )
     }
     .sheet(isPresented: self.$isPresentingAddProduct,

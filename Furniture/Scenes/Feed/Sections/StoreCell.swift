@@ -18,6 +18,7 @@ struct StoreCell: View {
         .frame(width: 100, height: 100)
         .aspectRatio(contentMode: .fill)
         .cornerRadius(16.0)
+        .accessibilityHidden(true)
       
       VStack(alignment: .leading) {
         Text(store.title)
@@ -27,6 +28,7 @@ struct StoreCell: View {
       }
       Spacer()
     }
+    .accessibilityElement(children: .combine)
   }
 }
 

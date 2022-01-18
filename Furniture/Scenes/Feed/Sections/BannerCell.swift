@@ -20,7 +20,9 @@ struct BannerCell: View {
       Image(banner.imageName)
         .resizable()
         .aspectRatio(contentMode: .fit)
+        .accessibilityHidden(true)
     }
+    .accessibilityElement(children: .combine)
   }
 }
 

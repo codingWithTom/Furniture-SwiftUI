@@ -14,10 +14,12 @@ struct OptionCell: View {
     HStack {
       Image(systemName: option.systemImageName)
         .foregroundColor(.blue)
+        .accessibilityHidden(true)
       Text(option.title)
         .font(.title2)
     }
     .padding(.horizontal)
+    .accessibilityElement(children: .combine)
   }
 }
 
