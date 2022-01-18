@@ -20,7 +20,7 @@ final class ProductServiceAdapter: ProductService {
   private lazy var products = [
     Product(name: "Bench", price: 20.5, imageName: "bench", description: loremIpsum),
     Product(name: "Coffee Table", price: 40.0, imageName: "coffeeTable", description: loremIpsum),
-    Product(name: "Dinning Table", price: 55.0, imageName: "dinningTable", description: loremIpsum),
+    Product(name: "Dining Table", price: 55.0, imageName: "dinningTable", description: loremIpsum),
     Product(name: "Director Chair", price: 75.0, imageName: "directorChair", description: loremIpsum),
     Product(name: "Orange Chair", price: 33.95, imageName: "orangeChair", description: loremIpsum),
     Product(name: "Small Wooden Table", price: 47.5, imageName: "smallWooden", description: loremIpsum),

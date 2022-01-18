@@ -16,16 +16,18 @@ struct FeaturedProductCell: View {
       Image(product.imageName)
         .resizable()
         .cornerRadius(20.0)
+        .accessibilityHidden(true)
       Text(product.title)
         .font(.headline)
       Text(product.subtitle)
         .font(.subheadline)
     }
+    .accessibilityElement(children: .combine)
   }
 }
 
 struct FeaturedProductCell_Previews: PreviewProvider {
   static var previews: some View {
-    FeaturedProductCell(product: FeaturedProductItem(title: "Dining Room", subtitle: "Dinning room subtitle", imageName: "diningRoom"))
+    FeaturedProductCell(product: FeaturedProductItem(title: "Dining Room", subtitle: "Dining room subtitle", imageName: "diningRoom"))
   }
 }

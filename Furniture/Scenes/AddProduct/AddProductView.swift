@@ -59,8 +59,10 @@ struct ProductCell: View {
         .aspectRatio(contentMode: .fill)
         .frame(width: imageSize, height: imageSize)
         .cornerRadius(8.0)
+        .accessibilityHidden(true)
       Text(name)
     }
+    .accessibilityElement(children: .combine)
   }
 }
 

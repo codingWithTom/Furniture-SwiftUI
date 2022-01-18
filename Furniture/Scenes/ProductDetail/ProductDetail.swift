@@ -22,6 +22,7 @@ struct ProductDetail: View {
             self.isZoomed.toggle()
           }
       }
+        .accessibilityHidden(true)
       Spacer()
       if !isZoomed {
         ScrollView {

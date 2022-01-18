@@ -17,6 +17,7 @@ struct FeaturedProductFeedSection: View {
         Text(section.name ?? "")
           .font(.title)
           .padding(.leading)
+          .accessibilityAddTraits(.isHeader)
         HStack(spacing: 16.0) {
           ForEach(section.items, id: \.id) { product in
             FeaturedProductCell(product: product)

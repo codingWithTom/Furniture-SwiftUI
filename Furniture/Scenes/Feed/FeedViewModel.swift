@@ -17,7 +17,7 @@ final class FeedViewModel {
   private lazy var sections: [FeedSection] = {
     let stores = self.dependencies.storeService.getStores()
     return [
-      BannerSection(name: nil, items: [
+      BannerSection(name: "Featured Items!", items: [
         BannerItem(title: "Build awesome living rooms", subtitle: "Book an appointment with our experts now!", imageName: "Banner0"),
         BannerItem(title: "A design for everybody", subtitle: "Your expectations will be met", imageName: "Banner1"),
         BannerItem(title: "Professional work place", subtitle: "Want to mount an office, count us in!", imageName: "Banner2"),
@@ -26,7 +26,7 @@ final class FeedViewModel {
       ]),
       StoreSection(name: "Our Best Stores", items: stores.map { StoreItem(title: $0.name, subtitle: $0.address, imageName: $0.imageName) }),
       FeaturedProductSection(name: "Featured Products", items: [
-        FeaturedProductItem(title: "Dinning Room", subtitle: "Stunning dining table and chairs", imageName: "diningRoom"),
+        FeaturedProductItem(title: "Dining Room", subtitle: "Stunning dining table and chairs", imageName: "diningRoom"),
         FeaturedProductItem(title: "Kitchen Tools", subtitle: "Must-have set of kitchen tools", imageName: "kitchenTools"),
         FeaturedProductItem(title: "Living Room", subtitle: "Everything you need for a living room, no matter the place!", imageName: "livingRoom"),
         FeaturedProductItem(title: "Moving Tools", subtitle: "Make sure to buy these before moving to your new home!", imageName: "movingTools"),
@@ -36,7 +36,7 @@ final class FeedViewModel {
         FeaturedProductItem(title: "Wicker furniture", subtitle: "Wicker is what your patio needs", imageName: "wicker")
       ]),
       OptionSection(name: "Quick Links", items: [
-        OptionItem(title: "About Funiture Aeki", systemImageName: "info"),
+        OptionItem(title: "About Furniture Aeki", systemImageName: "info"),
         OptionItem(title: "Share Aeki with your friends", systemImageName: "square.and.arrow.up.fill"),
         OptionItem(title: "News", systemImageName: "book.circle"),
         OptionItem(title: "Privacy Policy", systemImageName: "lock.icloud"),
