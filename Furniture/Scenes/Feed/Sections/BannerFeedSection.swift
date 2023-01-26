@@ -21,8 +21,10 @@ struct BannerFeedSection: View {
           .accessibilityAddTraits(.isHeader)
         HStack {
           ForEach(section.items, id: \.id) { bannerItem in
-            BannerCell(banner: bannerItem)
-              .frame(width: cellWidth)
+            NavigationLink(value: bannerItem) {
+              BannerCell(banner: bannerItem)
+                .frame(width: cellWidth)
+            }
           }
         }
       }

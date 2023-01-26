@@ -52,4 +52,13 @@ final class FeedViewModel {
   func getSections() -> [FeedSection] {
     return sections
   }
+  
+  func getRandomItems() -> [any FeedItem] {
+    var items: [any FeedItem] = []
+    for _ in 0 ..< 4 {
+      guard let item = sections.randomElement()?.sectionItems.randomElement() else { continue }
+      items.append(item)
+    }
+    return items
+  }
 }

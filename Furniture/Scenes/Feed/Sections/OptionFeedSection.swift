@@ -21,9 +21,11 @@ struct OptionFeedSection: View {
         .accessibilityAddTraits(.isHeader)
       LazyVGrid(columns: Array(repeating: GridItem(.fixed(cellWidth)), count: columns), alignment: .leading){
         ForEach(section.items, id: \.id) { option in
-          VStack(alignment: .leading) {
-            OptionCell(option: option)
-            Divider()
+          NavigationLink(value: option) {
+            VStack(alignment: .leading) {
+              OptionCell(option: option)
+              Divider()
+            }
           }
         }
       }
