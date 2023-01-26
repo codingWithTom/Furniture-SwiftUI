@@ -20,8 +20,10 @@ struct FeaturedProductFeedSection: View {
           .accessibilityAddTraits(.isHeader)
         HStack(spacing: 16.0) {
           ForEach(section.items, id: \.id) { product in
-            FeaturedProductCell(product: product)
-              .frame(width: cellWidth, height: 250)
+            NavigationLink(value: product) {
+              FeaturedProductCell(product: product)
+                .frame(width: cellWidth, height: 250)
+            }
           }
         }
       }
