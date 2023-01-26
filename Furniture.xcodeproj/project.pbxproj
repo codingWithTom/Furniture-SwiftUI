@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		400E366324C8B03E008A4924 /* OrderProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E366224C8B03E008A4924 /* OrderProduct.swift */; };
 		400E366524C8B929008A4924 /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E366424C8B929008A4924 /* OrderService.swift */; };
+		40202F4829830C2000FAA4E3 /* ItemViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40202F4729830C2000FAA4E3 /* ItemViews.swift */; };
+		40202F4A29830F8400FAA4E3 /* FeedItemVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40202F4929830F8400FAA4E3 /* FeedItemVisitor.swift */; };
+		40202F4E298337C100FAA4E3 /* FeedItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40202F4D298337C100FAA4E3 /* FeedItemFactory.swift */; };
 		4059AB5224EAFD1A00543A59 /* FeedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059AB5124EAFD1A00543A59 /* FeedSection.swift */; };
 		4059AB5624EB030600543A59 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059AB5524EB030600543A59 /* FeedViewModel.swift */; };
 		4059AB5824EB035700543A59 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059AB5724EB035700543A59 /* FeedView.swift */; };
@@ -52,6 +55,9 @@
 		4004A7AF24C1106600534094 /* Furniture.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Furniture.entitlements; sourceTree = "<group>"; };
 		400E366224C8B03E008A4924 /* OrderProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderProduct.swift; sourceTree = "<group>"; };
 		400E366424C8B929008A4924 /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
+		40202F4729830C2000FAA4E3 /* ItemViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViews.swift; sourceTree = "<group>"; };
+		40202F4929830F8400FAA4E3 /* FeedItemVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemVisitor.swift; sourceTree = "<group>"; };
+		40202F4D298337C100FAA4E3 /* FeedItemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemFactory.swift; sourceTree = "<group>"; };
 		4059AB5124EAFD1A00543A59 /* FeedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSection.swift; sourceTree = "<group>"; };
 		4059AB5524EB030600543A59 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		4059AB5724EB035700543A59 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
@@ -104,6 +110,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40202F4629830C0700FAA4E3 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				40202F4729830C2000FAA4E3 /* ItemViews.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 		4059AB5024EAFD0A00543A59 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +127,8 @@
 				4059AB5724EB035700543A59 /* FeedView.swift */,
 				4059AB6A24EB50C400543A59 /* FeedSectionVisitor.swift */,
 				4059AB6C24EB51A900543A59 /* FeedSectionFactory.swift */,
+				40202F4D298337C100FAA4E3 /* FeedItemFactory.swift */,
+				40202F4929830F8400FAA4E3 /* FeedItemVisitor.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -234,6 +250,7 @@
 		40DD162B24BFDD4000F29293 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				40202F4629830C0700FAA4E3 /* Items */,
 				4059AB5024EAFD0A00543A59 /* Feed */,
 				40D12D8324D0E108003304A3 /* TabBar */,
 				40E5F15624C8C2EE009C3080 /* Mocks */,
@@ -355,6 +372,7 @@
 				40D12D8024D0E075003304A3 /* Store.swift in Sources */,
 				40E5F15D24C8EDF0009C3080 /* AddProductViewModel.swift in Sources */,
 				4059AB6D24EB51A900543A59 /* FeedSectionFactory.swift in Sources */,
+				40202F4E298337C100FAA4E3 /* FeedItemFactory.swift in Sources */,
 				40D12D8224D0E0A7003304A3 /* StoreService.swift in Sources */,
 				400E366324C8B03E008A4924 /* OrderProduct.swift in Sources */,
 				40D12D8924D0E2C3003304A3 /* StoresMapView.swift in Sources */,
@@ -369,12 +387,14 @@
 				4059AB5624EB030600543A59 /* FeedViewModel.swift in Sources */,
 				40C8B53B24C8BAA1008A19A7 /* AddProduct.swift in Sources */,
 				4059AB6324EB4D7E00543A59 /* FeaturedProductCell.swift in Sources */,
+				40202F4A29830F8400FAA4E3 /* FeedItemVisitor.swift in Sources */,
 				40DD161924BFC5D300F29293 /* OrderView.swift in Sources */,
 				40D12D8D24D0E45C003304A3 /* StoresView.swift in Sources */,
 				40DD161424BFC53500F29293 /* Order.swift in Sources */,
 				40ACC62B24BFDE6C00EB5010 /* ProductView.swift in Sources */,
 				40DD15FD24BFC51000F29293 /* SceneDelegate.swift in Sources */,
 				40DD161524BFC53500F29293 /* Product.swift in Sources */,
+				40202F4829830C2000FAA4E3 /* ItemViews.swift in Sources */,
 				4059AB6B24EB50C400543A59 /* FeedSectionVisitor.swift in Sources */,
 				4059AB6524EB4E0400543A59 /* FeaturedProductFeedSection.swift in Sources */,
 				4059AB5224EAFD1A00543A59 /* FeedSection.swift in Sources */,
@@ -446,7 +466,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -500,7 +520,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -21,8 +21,10 @@ struct StoreFeedSection: View {
           .accessibilityAddTraits(.isHeader)
         LazyHGrid(rows: Array(repeating: GridItem(.fixed(100)), count: 3)) {
           ForEach(section.items, id: \.id) { store in
-            StoreCell(store: store)
-              .frame(width: cellWidth)
+            NavigationLink(value: store) {
+              StoreCell(store: store)
+                .frame(width: cellWidth)
+            }
           }
         }
       }
