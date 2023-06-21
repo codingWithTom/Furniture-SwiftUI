@@ -12,9 +12,7 @@ struct FeedSectionFactory: FeedSectionVisitor {
   func visit(bannerSection: BannerSection, data: (geometry: GeometryProxy, sizeClass: UserInterfaceSizeClass)) -> AnyView {
     let isRegulardWith = data.sizeClass == .regular
     return AnyView(
-      BannerFeedSection(
-        section: bannerSection,
-        cellWidth: data.geometry.size.width * (isRegulardWith ? 0.45 : 0.9))
+      BannerFeedSection(section: bannerSection)
         .frame(height: isRegulardWith ? 400 : nil)
     )
   }
