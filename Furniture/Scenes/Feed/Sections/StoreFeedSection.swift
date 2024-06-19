@@ -24,6 +24,7 @@ struct StoreFeedSection: View {
             NavigationLink(value: store) {
               StoreCell(store: store)
                 .frame(width: cellWidth)
+                .draggable(store)
             }
           }
         }
