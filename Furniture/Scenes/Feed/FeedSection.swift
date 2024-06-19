@@ -54,7 +54,7 @@ struct StoreSection: FeedSection {
   }
 }
 
-struct StoreItem: FeedItem {
+struct StoreItem: FeedItem, Codable {
   var id: String { title + subtitle + imageName }
   let title: String
   let subtitle: String
